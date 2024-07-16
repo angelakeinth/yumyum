@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>YumYum</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Yummy
+  * Template URL: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+  .header {
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    height: 90px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 575px) {
+    .header {
+      height: 70px;
+    }
+  }
+  
+  /* Styles for the container within the header */
+  .header .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Styles for the logo and its container */
+  .header .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  }
+  
+  .header .logo img {
+    max-height: 90px;
+    margin-left: 10px;
+  }
+  
+  .header .logo h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    font-family: var(--font-secondary);
+  }
+  
+  .header .logo h1 span {
+    color: var(--color-primary);
+  }
+  
+  /* Styles for the navigation bar */
+  .header .navbar {
+    display: flex;
+  }
+  
+  .header .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .header .navbar ul li {
+    margin-left: 25px; /* Adjust spacing as needed */
+  }
+  
+  .header .navbar ul li a {
+    display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3px;
+      font-family: var(--font-secondary);
+      font-size: 16px;
+      font-weight: 600;
+      color: #7f7f90;
+      white-space: nowrap;
+      transition: 0.3s;
+      position: relative;
+  }
+  
+  .header .navbar ul li a:hover {
+    color: var(--color-primary);
+  }
+  .header.navbar .dropdown ul {
+    display: block;
+    position: absolute;
+    left: 28px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
+    border-radius: 4px;
+  }
+
+  .header.navbar .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .header.navbar .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+    font-weight: 600;
+  }
+
+  .header.navbar .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navbar .dropdown ul a:hover,
+  .navbar .dropdown ul .active:hover,
+  .navbar .dropdown ul li:hover>a {
+    color: var(--color-primary);
+  }
+
+  .header.navbar .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  .header.navbar .dropdown .dropdown ul {
+    top: 0;
+    left: calc(100% - 30px);
+    visibility: hidden;
+  }
+  /* Styles for the "Book a Table" button */
+  /* Button styles */
+  .header .btn-book-a-table,
+  .header .btn-book-a-table:focus {
+    font-size: 14px;
+    color: #fff;
+    background: var(--color-primary);
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+  
+  .header .btn-book-a-table:hover,
+  .header .btn-book-a-table:focus:hover {
+    color: #fff;
+    background: rgba(206, 18, 18, 0.8);
+  }
+  
+</style>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+
+        <img src="https://iili.io/JQxYWy7.md.jpg" alt="time" class="logo-img">
+      </a>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about us.html">About</a></li>
+            <li><a href="event.html">Events</a></li>
+            <li ><a href="menu.html">Menu</a>
+              
+                </li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav><!-- .navbar -->
+  
+        <a class="btn-book-a-table" href="book-a-table.html">Book a Table</a>
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+  
+      </div>
+    </header><!-- End Header -->
+    
+
+<!-- ======= Menu Section ======= -->
+<section id="menu" class="menu">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <h2>Our Menu</h2>
+        <p>Check Our <span>YumYum Menu</span></p>
+      </div>
+
+      <ul class="nav nav-tabs d-flex justify-content-center" id="menuTabs" data-aos="fade-up" data-aos-delay="200">
+        <li class="nav-item">
+          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters">
+            <h4>Starters</h4>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="breakfast-tab" data-bs-toggle="tab" href="#breakfast" role="tab" data-bs-target="#menu-breakfast">
+            <h4>Breakfast</h4>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="Lunch-tab" data-bs-toggle="tab" href="#Lunch" role="tab" data-bs-target="#menu-lunch">
+            <h4>Lunch</h4>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="Dinner-tab" data-bs-toggle="tab" href="#Dinner" role="tab" data-bs-target="#menu-dinner">
+            <h4>Dinner</h4>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="Beverages-tab" data-bs-toggle="tab" href="#Beverages" role="tab" data-bs-target="#menu-Beverages">
+            <h4>Beverages</h4>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="Dessert-tab" data-bs-toggle="tab" href="#Dessert" role="tab" data-bs-target="#menu-Dessert">
+            <h4>Dessert</h4>
+          </a>
+        </li>
+      </ul>
+      
+      <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+        <div class="tab-pane fade active show" id="menu-starters">
+          <div class="tab-header text-center">
+            <p>Menu</p>
+            <h3 id="starter">Starters</h3>
+          </div>
+          <div class="row gy-5">
+            <div class="col-lg-4 menu-item">
+              <div class="menu-item-box">
+                <a href="https://iili.io/d3KCbJs.md.png" class="glightbox">
+                  <img src="https://iili.io/d3KCbJs.md.png" class="menu-img img-fluid" alt="">
+                </a>
+                <h4>Vegan Pik Bowl</h4>
+                <p class="price">₱120</p>
+                <button type="button" class="btn btn-info" onclick="window.location.href='index.php'">Order Now</button>
+              </div>
+            </div>
+            <div class="col-lg-4 menu-item">
+              <div class="menu-item-box">
+                <a href="https://iili.io/d3KRKR1.png" class="glightbox">
+                  <img src="https://iili.io/d3KRKR1.png" class="menu-img img-fluid" alt="">
+                </a>
+                <h4>Chicken Katsudon</h4>
+                <p class="price">₱115</p>
+                <button type="button" class="btn btn-info" onclick="window.location.href='index.php'">Order Now</button>
+              </div>
+            </div>
+            <div class="col-lg-4 menu-item">
+              <div class="menu-item-box">
+                <a href="https://iili.io/J6JFWqx.md.png" class="glightbox">
+                  <img src="https://iili.io/J6JFWqx.md.png" class="menu-img img-fluid" alt="">
+                </a>
+                <h4>Kimchi Bokumbap</h4>
+                <p class="price">₱120</p>
+                <button type="button" class="btn btn-info" onclick="window.location.href='index.php'">Order Now</button>
+              </div>
+            </div>
+            <div class="col-lg-4 menu-item">
+              <div class="menu-item-box">
+                <a href="https://iili.io/d3KKqEg.png" class="glightbox">
+                  <img src="https://iili.io/d3KKqEg.png" class="menu-img img-fluid" alt="">
+                </a>
+                <h4>Sausage</h4>
+                <p class="price">₱150</p>
+                <button type="button" class="btn btn-info" onclick="window.location.href='index.php'">Order Now</button>
+              </div>
+            </div>
+            <div class="col-lg-4 menu-item">
+              <div class="menu-item-box">
+                <a href="https://iili.io/d3KBL8b.md.png" class="glightbox">
+                  <img src="https://iili.io/d3KBL8b.md.png" class="menu-img img-fluid" alt="">
+                </a>
+                <h4>Omelette Tomato</h4>
+                <p class="price">₱150</p>
+                <button type="button" class="btn btn-info" onclick="window.location.href='index.php'">Order Now</button>
+              </div>
+            </div>
+            <div class="col-lg-4 menu-item">
+              <div class="menu-item-box">
+                <a href="https://iili.io/J6JfbUl.png" class="glightbox">
+                  <img src="https://iili.io/J6JfbUl.png" class="menu-img img-fluid" alt="">
+                </a>
+                <h4>Creamy Lemon Zucchini Pasta</h4>
+                <p class="price">₱130</p>
+                <button type="button" class="btn btn-info" onclick="window.location.href='index.php'">Order Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="tab-pane fade" id="menu-breakfast">
+          <div class="tab-header text-center">
+            <p>Menu</p>
+            <h3 id="bfast">Breakfast</h3>
+          </div>
+          <div class="row gy-5">
+            <div class="col-lg-4 menu-item">
+              <div class="menu-item-box">
+                <a href="https://iili.io/JrcjP3B.md.png" class="glightbox">
+                  <img src="https://iili.io/JrcjP3B.md.png" class="menu-img img-fluid" alt="">
+                </a>
+                <h4>Strawberry Banana Toast</h4>
+                <p class="price">₱120</p>
+                <button type="button" class="btn btn-info" onclick="window.location.href='index.php'">Order Now</button>
+              </div>
+            </div>
+            <div class="col-lg-4 menu-item">
+              <div class="menu-item-box">
+                <a href="https://iili.io/JrlYUYv.md.png" class="glightbox">
+                  <img src="https://iili.io/JrlYUYv.md.png" class="menu-img img-fluid" alt="">
+                </a>
+                <h4>Chicken Waffle</h4>
+                <p class="price">₱150</p>
+                <button type="button" class="btn btn-info" onclick="window.location.href='index.php'">Order Now</button>
+              </div>
+            </div>
+            <div class="col-lg-4 menu-item">
+              <div class="menu-item-box">
+                <a href="https://iili.io/J4gGqVR.md.png" class="glightbox">
+                  <img src="https://iili.io/J4gGqVR.md.png" class="menu-img img-fluid" alt="">
+                </a>
+                <h4>Gluten Pancake</h4>
+                <p class="price">₱150</p>
+                <button type="button" class="btn btn-info" onclick="window.location.href='index.php'">Order Now</button>
+              </div>
+            </div>
+            <div class="col-lg-4 menu-item">
+              <div class="menu-item-box">
+                <a href="https://iili.io/J4gXU2p.png" class="glightbox">
+                  <img src="https://iili.io/J4gXU2p.png" class="menu-img img-fluid" alt="">
+                </a>
+                <h4>Strawberry Cream</h4>
+                <p class="price">₱150</p>
+                <button type="button" class="btn btn-info" onclick="window.location.href='index.php'">Order Now</button>
+              </div>
+            </div>
+            <div class="col-lg-4 menu-item">
+              <div class="menu-item-box">
+                <a href="https://iili.io/J4ghIZg.png" class="glightbox">
+                  <img src="https://iili.io/J4ghIZg.png" class="menu-img img-fluid" alt="">
+                </a>
+                <h4>Buttermilk</h4>
+                <p class="price">₱150</p>
+                <button type="button" class="btn btn-info" onclick="window.location.href='index.php'">Order Now</button>
+              </div>
+            </div>
+            <div class="col-lg-4 menu-item">
+              <div class="menu-item-box">
+                <a href="https://iili.io/J4gjHSp.png" class="glightbox">
+                  <img src="https://iili.io/J4gjHSp.png" class="menu-img img-fluid" alt="">
+              </a>
+              <h4>Cookie Waffle</h4>
+              <p class="price">₱150</p>
+                <button type="button" class="btn btn-info" onclick="window.location.href='index.php'">Order Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="tab-pane fade" id="menu-lunch">
+        <div class="tab-header text-center">             
+                <p>Menu</p>
+                <h3 id="lunch">Lunch</h3>
+              </div>
+              <div class="row gy-5">
+                <!-- Lunch Menu Items -->
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/d3KxiWQ.png" class="glightbox">
+                      <img src="https://iili.io/d3KxiWQ.png" class="menu-img img-fluid" alt="">
+                    </a>
+                    <h4>Pork Teriyaki</h4>
+                    <p class="price">₱230</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/d3Kzwkg.md.png" class="glightbox">
+                      <img src="https://iili.io/d3Kzwkg.md.png" class="menu-img img-fluid" alt="">
+                    </a>
+                    <h4>Denver Omelet</h4>
+                    <p class="price">₱150</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/dFnFyn1.md.png" class="glightbox">
+                      <img src="https://iili.io/dFnFyn1.md.png" class="menu-img img-fluid" alt="">
+                    </a>
+                    <h4>Braciole</h4>
+                    <p class="price">₱250</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/d3KIn3P.md.png" class="glightbox">
+                      <img src="https://iili.io/d3KIn3P.md.png" class="menu-img img-fluid" alt="">
+                    </a>
+                    <h4>Sweet Potato Black Beans Meal</h4>
+                    <p class="price">₱150</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/dFnC9bR.md.png" class="glightbox">
+                      <img src="https://iili.io/dFnC9bR.md.png" class="menu-img img-fluid" alt="">
+                    </a>
+                    <h4>Lasagna</h4>
+                    <p class="price">₱170</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/dBSnrfS.png" class="glightbox">
+                      <img src="https://iili.io/dBSnrfS.png" class="menu-img img-fluid" alt="">
+                    </a>
+                    <h4>Kare Kare</h4>
+                    <p class="price">₱150</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="tab-pane fade" id="menu-dinner">
+              <div class="tab-header text-center">
+                <p>Menu</p>
+                <h3 id="dinner">Dinner</h3>
+              </div>
+              <div class="row gy-5">
+                <!-- Dinner Menu Items -->
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/d3KTFHX.png" class="glightbox">
+                      <img src="https://iili.io/d3KTFHX.png" class="menu-img img-fluid" alt="">
+                    </a>
+                    <h4>Pork Chops in Garlic Mushroom</h4>
+                    <p class="price">₱300</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/d3K7YPf.png" class="glightbox">
+                      <img src="https://iili.io/d3K7YPf.png" class="menu-img img-fluid" alt="">
+                    </a>
+                    <h4>BBQ Pork Totchos</h4>
+                    <p class="price">₱250</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/J4y9evj.png" class="glightbox">
+                      <img src="https://iili.io/J4y9evj.png" class="menu-img img-fluid" alt="">
+                    </a>
+                    <h4>Salmotahe Salad</h4>
+                    <p class="price">₱150</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/J6HUdOu.md.png" class="glightbox">
+                      <img src="https://iili.io/J6HUdOu.md.png" class="menu-img img-fluid" alt="">
+                    </a>
+                    <h4>Steak & Salad</h4>
+                    <p class="price">₱150</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/J4yqJpe.png" class="glightbox">
+                      <img src="https://iili.io/J4yqJpe.png" class="menu-img img-fluid" alt="">
+                    </a>
+                    <h4>Roast Beef</h4>
+                    <p class="price">₱150</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/J4yW2A7.md.png" class="glightbox">
+                      <img src="https://iili.io/J4yW2A7.md.png" class="menu-img img-fluid" alt="">
+                    </a>
+                    <h4>Gourmet Steak</h4>
+                    <p class="price">₱180</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="tab-pane fade" id="menu-Beverages">
+              <div class="tab-header text-center">
+                <p>Menu</p>
+                <h3 id="beverages">Beverages</h3>
+              </div>
+              <div class="row gy-5">
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/d3KaR4f.png" class="glightbox">
+                      <img src="https://iili.io/d3KaR4f.png" class="menu-img img-fluid" alt=""></a>
+                    <h4>Beer</h4>
+                    <p class="price">
+                      ₱120
+                    </p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+        <div class="col-lg-4 menu-item">
+          <div class="menu-item-box">
+            <a href="https://iili.io/d3KcVtt.png" class="glightbox">
+              <img src="https://iili.io/d3KcVtt.png" class="menu-img img-fluid" alt=""></a>
+            <h4>soda</h4>
+            <p class="price">
+              ₱110
+            </p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+      <div class="col-lg-4 menu-item">
+          <div class="menu-item-box">
+            <a href="https://iili.io/d3K19cJ.png" class="glightbox">
+              <img src="https://iili.io/d3K19cJ.png" class="menu-img img-fluid" alt=""></a>
+            <h4>Juice</h4>
+            <p class="price">
+              ₱100
+            </p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/d3K1lcb.md.png" class="glightbox">
+                      <img src="https://iili.io/d3K1lcb.md.png" class="menu-img img-fluid" alt=""></a>
+                    <h4>Coffee</h4>
+                    <p class="price">
+                      ₱150
+                    </p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/d3KETga.png" class="glightbox">
+                      <img src="https://iili.io/d3KETga.png" class="menu-img img-fluid" alt=""></a>
+                    <h4>Milkshake </h4>
+                    <p class="price">
+                      ₱120
+                    </p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/d3KErkx.png" class="glightbox">
+                      <img src="https://iili.io/d3KErkx.png" class="menu-img img-fluid" alt=""></a>
+                    <h4>Wine</h4>
+                    <p class="price">
+                      ₱500
+                    </p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+<div class="tab-pane fade" id="menu-dessert">
+    <div class="tab-header text-center">
+          <p>Menu</p>
+         <h3 id="dessert">Dessert</h3>
+              </div>
+          <div class="row gy-5">
+                <!-- Dessert Menu Items -->
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/dBSsTVB.md.png" class="glightbox">
+                      <img src="https://iili.io/dBSsTVB.md.png" class="menu-img img-fluid" alt="Chocolate Mousse">
+                    </a>
+                    <h4>Chocolate Mousse</h4>
+                    <p class="price">₱120</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/d3KKi3X.md.png" class="glightbox">
+                      <img src="https://iili.io/d3KKi3X.md.png" class="menu-img img-fluid" alt="Apple Pie">
+                    </a>
+                    <h4>Apple Pie</h4>
+                    <p class="price">₱150</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/d3KB2nQ.md.png" class="glightbox">
+                      <img src="https://iili.io/d3KB2nQ.md.png" class="menu-img img-fluid" alt="Cheesecake">
+                    </a>
+                    <h4>Cheesecake</h4>
+                    <p class="price">₱140</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/d3Km8tS.md.png" class="glightbox">
+                      <img src="https://iili.io/d3Km8tS.md.png" class="menu-img img-fluid" alt="Tiramisu">
+                    </a>
+                    <h4>Tiramisu</h4>
+                    <p class="price">₱160</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+                <div class="col-lg-4 menu-item">
+                  <div class="menu-item-box">
+                    <a href="https://iili.io/d3Kc8Fl.md.png" class="glightbox">
+                      <img src="https://iili.io/d3Kc8Fl.md.png" class="menu-img img-fluid" alt="Fruit Salad">
+                    </a>
+                    <h4>Fruit Salad</h4>
+                    <p class="price">₱130</p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='order-now.html'">Order Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        
+      <!-- End Footer -->
+        <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <div id="preloader"></div>
+      
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+      
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
+</body>
+</html>
